@@ -19,7 +19,7 @@ As expressões regulares (regex) são ferramentas poderosas para a validação d
 
 ## O que é NIF?
 
-**NIF (Número de Identificação Fiscal)** é um número de 9 dígitos utilizado em Portugal para identificar contribuintes, sejam eles pessoas físicas ou jurídicas. Este número é essencial para a execução de operações financeiras e fiscais no país.
+**NIF (Número de Identificação Fiscal)** é um número de 9 dígitos utilizado em Portugal para identificar contribuintes, sejam pessoas físicas ou jurídicas. Este número é essencial para a administração de impostos e para a realização de operações financeiras e fiscais no país.
 
 ### Estrutura do NIF:
 - 9 dígitos numéricos (exemplo: `314549625`).
@@ -27,7 +27,7 @@ As expressões regulares (regex) são ferramentas poderosas para a validação d
 
 ## O que é NIS?
 
-**NIS (Número de Identificação Social)** é um número de 11 dígitos utilizado no Brasil para identificar cidadãos que participam de programas sociais. O NIS é gerado pela Caixa Econômica Federal e é essencial para a administração de benefícios sociais.
+**NIS (Número de Identificação da Segurança Social)** é um número utilizado em Portugal para identificar trabalhadores e beneficiários de serviços sociais. O NISS é gerado pela Segurança Social e é essencial para a administração de benefícios como pensões e subsídios.
 
 ### Estrutura do NIS:
 - 11 dígitos numéricos (exemplo: `12345678901`).
