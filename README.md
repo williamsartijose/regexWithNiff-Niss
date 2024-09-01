@@ -1,15 +1,15 @@
 
-# Documentação de Validação de NIF e NIS com Expressões Regulares
+# Documentação de Validação de NIF e NISS com Expressões Regulares
 
-Este documento fornece uma visão detalhada sobre as expressões regulares utilizadas para validar dois documentos importantes: o NIF (Número de Identificação Fiscal) em Portugal e o NIS (Número de Identificação Social) no Brasil. 
+Este documento fornece uma visão detalhada sobre as expressões regulares utilizadas para validar dois documentos importantes: o NIF (Número de Identificação Fiscal) em Portugal e o NISS (Número de Identificação da Segurança Social) em Portugal
 
 ## Índice
 1. [Introdução](#introdução)
 2. [O que é NIF?](#o-que-é-nif)
-3. [O que é NIS?](#o-que-é-nis)
+3. [O que é NISS?](#o-que-é-niss)
 4. [Expressões Regulares](#expressões-regulares)
    - [Regex para NIF](#regex-para-nif)
-   - [Regex para NIS](#regex-para-nis)
+   - [Regex para NISS](#regex-para-niss)
 5. [Exemplos de Uso](#exemplos-de-uso)
 6. [Considerações Finais](#considerações-finais)
 
@@ -25,11 +25,11 @@ As expressões regulares (regex) são ferramentas poderosas para a validação d
 - 9 dígitos numéricos (exemplo: `314549625`).
 - Pode ser formatado com pontos como separadores opcionais (exemplo: `314.549.625`).
 
-## O que é NIS?
+## O que é NISS?
 
-**NIS (Número de Identificação da Segurança Social)** é um número utilizado em Portugal para identificar trabalhadores e beneficiários de serviços sociais. O NISS é gerado pela Segurança Social e é essencial para a administração de benefícios como pensões e subsídios.
+**NISS (Número de Identificação da Segurança Social)** é um número utilizado em Portugal para identificar trabalhadores e beneficiários de serviços sociais. O NISS é gerado pela Segurança Social e é essencial para a administração de benefícios como pensões e subsídios.
 
-### Estrutura do NIS:
+### Estrutura do NISS:
 - 11 dígitos numéricos (exemplo: `12345678901`).
 - Pode ser formatado com pontos e um hífen como separadores opcionais (exemplo: `123.456.789-01`).
 
@@ -55,22 +55,22 @@ A regex abaixo é usada para validar o formato do NIF, considerando que ele pode
 - `31454.9625`
 - `31.4549.625`
 
-### Regex para NIS
+### Regex para NISS
 
-A regex abaixo é usada para validar o formato do NIS, permitindo a inclusão opcional de pontos e um hífen como separadores.
+A regex abaixo é usada para validar o formato do NISS, permitindo a inclusão opcional de pontos e um hífen como separadores.
 
 ```regex
 \d{3}.?\d{5}.?\d{2}-?\d{1}
 ```
 
 #### Explicação:
-- `\d{3}`: Corresponde aos três primeiros dígitos do NIS.
+- `\d{3}`: Corresponde aos três primeiros dígitos do NISS.
 - `.?`: Permite um ponto opcional após os três primeiros dígitos.
-- `\d{5}`: Corresponde aos próximos cinco dígitos do NIS.
+- `\d{5}`: Corresponde aos próximos cinco dígitos do NISS.
 - `.?`: Permite um ponto opcional após os cinco dígitos centrais.
-- `\d{2}`: Corresponde aos dois próximos dígitos do NIS.
+- `\d{2}`: Corresponde aos dois próximos dígitos do NISS.
 - `-?`: Permite um hífen opcional antes do último dígito.
-- `\d{1}`: Corresponde ao último dígito do NIS.
+- `\d{1}`: Corresponde ao último dígito do NISS.
   
 #### Exemplos de Correspondências:
 - `12345678901`
@@ -85,11 +85,11 @@ A regex abaixo é usada para validar o formato do NIS, permitindo a inclusão op
 
 ## Exemplos de Uso
 
-Para usar expressões regulares para validação de NIF e NIS em uma aplicação Spring Boot com Bean Validation, você pode criar anotações personalizadas que utilizam regex para validar os formatos dos números. Abaixo está um exemplo completo de como fazer isso em Java.
+Para usar expressões regulares para validação de NIF e NISS em uma aplicação Spring Boot com Bean Validation, você pode criar anotações personalizadas que utilizam regex para validar os formatos dos números. Abaixo está um exemplo completo de como fazer isso em Java.
 
 ### Passo 1: Criar Anotações Personalizadas
 
-Primeiro, você precisa criar anotações personalizadas para validar NIF e NIS.
+Primeiro, você precisa criar anotações personalizadas para validar NIF e NISS.
 
 #### Anotação para NIF
 Crie uma anotação `@ValidNIF`:
@@ -114,7 +114,7 @@ public @interface ValidNIF {
 }
 ```
 
-#### Anotação para NIS
+#### Anotação para NISS
 Crie uma anotação `@ValidNIS`:
 
 ```java
@@ -168,7 +168,7 @@ public class NIFValidator implements ConstraintValidator<ValidNIF, String> {
 }
 ```
 
-#### Validador para NIS
+#### Validador para NISS
 Crie a classe `NISValidator`:
 
 ```java
@@ -199,7 +199,7 @@ public class NISValidator implements ConstraintValidator<ValidNIS, String> {
 
 Agora você pode usar essas anotações em suas classes de modelo.
 
-#### Exemplo de Modelo com NIF e NIS
+#### Exemplo de Modelo com NIF e NISS
 
 ```java
 package com.example.model;
@@ -272,10 +272,10 @@ Este exemplo demonstra como usar anotações personalizadas e validações em um
 ## Considerações Finais
 
 - **Flexibilidade**: As regex fornecidas são flexíveis e permitem diferentes formatos de entrada, aumentando a usabilidade para os usuários.
-- **Precisão**: Essas regex são projetadas para corresponder apenas aos formatos válidos de NIF e NIS, evitando erros comuns de formatação.
+- **Precisão**: Essas regex são projetadas para corresponder apenas aos formatos válidos de NIF e NISS, evitando erros comuns de formatação.
 - **Uso**: Essas expressões podem ser usadas em qualquer linguagem que suporte regex para validar a entrada de dados de usuários em formulários ou sistemas.
 
-Com essas expressões regulares, você pode assegurar que os números de NIF e NIS sejam inseridos corretamente, facilitando a validação automática em aplicações web e de software.
+Com essas expressões regulares, você pode assegurar que os números de NIF e NISS sejam inseridos corretamente, facilitando a validação automática em aplicações web e de software.
 
 ---
 
